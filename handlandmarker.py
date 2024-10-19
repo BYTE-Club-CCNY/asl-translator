@@ -27,10 +27,10 @@ if __name__ == "__main__":
             for idx in range(len(result.hand_landmarks)):
                 hand_landmarks = result.hand_landmarks[idx]
                 handedness = result.handedness[idx]
-                f.write(f"Hand {idx + 1}:\n")
+                f.write(f"Hand {idx}:\n")
                 f.write(f"Handedness: {handedness[0].category_name}\n")
                 for landmark_idx, landmark in enumerate(hand_landmarks):
-                    f.write(f"Landmark {landmark_idx + 1}: x={landmark.x:.4f}, y={landmark.y:.4f}, z={landmark.z:.4f}\n")
+                    f.write(f"Landmark {landmark_idx}: x={landmark.x:.4f}, y={landmark.y:.4f}, z={landmark.z:.4f}\n")
                 f.write("\n")
             
         
