@@ -12,34 +12,32 @@ def DrawImage():
         if cap.isOpened():
             ret, frame = cap.read()
 
-        if not ret:
-             print("Empty frame.")
+            if not ret:
+                print("Empty frame.")
 
-        frame.flags.writeable = False
-        frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
-        results = hands.process(frame)
+            frame.flags.writeable = False
+            frame = cv.cvtColor(frame, cv.COLOR_BGR2RGB)
+            results = hands.process(frame)
 
-        
+            
 
-        frame.flags.writeable = True
-        frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR)
-        if results.multi_hand_landmarks:
-          for hand_landmarks in results.multi_hand_landmarks:
-            mp_drawing.draw_landmarks(
-                frame,
-                hand_landmarks,
-                mp_hands.HAND_CONNECTIONS,
-                mp_drawing_styles.get_default_hand_landmarks_style(),
-                mp_drawing_styles.get_default_hand_connections_style())
+            frame.flags.writeable = True
+            frame = cv.cvtColor(frame, cv.COLOR_RGB2BGR)
+            if results.multi_hand_landmarks:
+                for hand_landmarks in results.multi_hand_landmarks:
+                    mp_drawing.draw_landmarks(
+                        frame,
+                        hand_landmarks,
+                        mp_hands.HAND_CONNECTIONS,
+                        mp_drawing_styles.get_default_hand_landmarks_style(),
+                        mp_drawing_styles.get_default_hand_connections_style())
 
-        return frame
+            return frame
         # cv.imshow('MediaPipe Hands', frame)
         
 
 
 if __name__ == "__main__":
-    cap.release()
-    cv.destroyAllWindows()
     with mp_hands.Hands() as hands:
         while cap.isOpened():
             ret, frame = cap.read()
@@ -67,3 +65,6 @@ if __name__ == "__main__":
             cv.imshow('MediaPipe Hands', frame)
             if cv.waitKey(1) == ord('q'):
                 break
+            
+    cap.release()
+    cv.destroyAllWindows()

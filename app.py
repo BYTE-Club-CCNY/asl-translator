@@ -10,12 +10,13 @@ if __name__ == "__main__":
 # BYTE ASL TRANSLATOR
 """)
     frame_placeholder = st.empty()
-    running: bool = true
+    stop = st.button("Stop")
+    running: bool = True
     while running:
-        # frame_placeholder.image(ct.DrawImage(), channels="RGB")
-        if st.button("Stop"):
-            running = false
-            break
+        frame_placeholder.image(ct.DrawImage(), channels="RGB")
+        if stop:
+            running = False
+            # break
         
         
     
