@@ -5,10 +5,9 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 
 cap = cv.VideoCapture(0)
+hands = mp_hands.Hands()
 
-
-def DrawImage():
-    with mp_hands.Hands() as hands:
+def DrawImage(hands): # This is mostly a copy of the old code (now in name = main) except it returns the frame as an image
         if cap.isOpened():
             ret, frame = cap.read()
 
@@ -34,7 +33,7 @@ def DrawImage():
 
             return frame
         # cv.imshow('MediaPipe Hands', frame)
-        
+hands.close()       
 
 
 if __name__ == "__main__":
