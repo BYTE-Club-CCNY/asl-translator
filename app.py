@@ -1,7 +1,7 @@
 import streamlit as st
 import cv2
 
-import cam_test as ct # cam tools
+import cam_tools as ct # cam tools
 
 import mediapipe as mp
 mp_hands = mp.solutions.hands
@@ -13,15 +13,22 @@ if __name__ == "__main__":
     
     frame_placeholder = st.empty()
     stop = st.button("Stop")
-    running: bool = True
+    start = st.button("Run Model")
+    
+    running: bool = None
+    cap = cv2.VideoCapture()
+
+    if start and not cap.isOpened():
+        cap.open(0)
+        running = True
+
+    if stop and cap.isOpened():
+        running = False
+        cap.release()
+
     with mp_hands.Hands() as hands:
         while running:
-            frame_placeholder.image(ct.DrawImage(hands), channels="RGB")
-            if stop:
-                running = False
-                # break
-        
-hands.close()
+            frame_placeholder.image(ct.DrawImage(hands, cap), channels="BGR")
     
 
 
