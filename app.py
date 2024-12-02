@@ -22,8 +22,10 @@ if __name__ == "__main__":
 """)
     #intro to the streamlit
     st.write("""
-    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: [Add names here]. During the fall semester, 
-    we used machine learning to train a YOLO model with 50 ASL words using image classification.
+    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Sign Tuah. [explain the name] Built by Aaron James,  
+    Wesley Pilamunga, Hamim Seam and Tanzina Sumona. Mentored by Baljinder Hothi. 
+    
+    During the fall semester,  we used machine learning to train a YOLO model with 50 ASL words using image classification.
 
     **MediaPipe**:
     MediaPipe is used to identify and extract regions of interest (ROIs), specifically for hand detection. 
@@ -66,7 +68,7 @@ if __name__ == "__main__":
             
 #adding pdf with the list of words used to train the model
     st.subheader("📄 View Documentation")
-    pdf_file_path = "/Users/tanzinasumona/Desktop/asl-translator/ASL_dataset.pdf"  # Replace with your PDF file path
+    pdf_file_path = "/Users/tanzinasumona/Desktop/asl-translator/ASL_dataset.pdf" 
     show_pdf(pdf_file_path)
     
 
