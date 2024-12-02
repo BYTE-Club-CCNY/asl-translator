@@ -1,6 +1,6 @@
 import streamlit as st
 import cv2
-
+import os
 import cam_tools as ct # cam tools
 
 import base64 #display pdf
@@ -66,7 +66,7 @@ if __name__ == "__main__":
             
 #adding pdf with the list of words used to train the model
     st.subheader("📄 View Documentation")
-    pdf_file_path = "/Users/tanzinasumona/Desktop/asl-translator/ASL_dataset.pdf"  # Replace with your PDF file path
+    pdf_file_path = os.getcwd() + "/ASL_dataset.pdf"  # Replace with your PDF file path
     show_pdf(pdf_file_path)
     
 

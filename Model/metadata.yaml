@@ -1,0 +1,64 @@
+description: Ultralytics best model trained on /Users/WesleyPilamunga/Desktop/code/ASL-Model/ASL
+  Identifier - BYTE.v4i.yolov8/data.yaml
+author: Ultralytics
+date: '2024-11-24T20:15:16.237273'
+version: 8.3.36
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 32
+task: detect
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Beer
+  1: Book
+  2: Boring
+  3: Breakfast
+  4: Deaf -chin - ear-
+  5: Deaf -ear-chin-
+  6: Easter
+  7: Fail
+  8: Laugh
+  9: Library
+  10: Match
+  11: Nervous
+  12: 'Null'
+  13: Number
+  14: Number- 03
+  15: Number- 04
+  16: Number- 05
+  17: Number- 06
+  18: Number- 1
+  19: Number- 10
+  20: Number- 2
+  21: Number- 7
+  22: Number- 8
+  23: Number- 9
+  24: Past
+  25: Sad
+  26: School
+  27: Sign Language
+  28: Slow
+  29: Student-Casual Version-
+  30: Teach
+  31: Teacher
+  32: Telephone
+  33: Thank You
+  34: Understand
+  35: Upset
+  36: Yellow
+  37: again
+  38: dont understand
+  39: good
+  40: hearing
+  41: learn
+  42: like
+  43: meaning-intent-purpose-
+  44: meet
+  45: my
+  46: name
+  47: nice-cleam-
+  48: 'no'
+  49: think
