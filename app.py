@@ -22,8 +22,7 @@ if __name__ == "__main__":
 """)
     #intro to the streamlit
     st.write("""
-    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Sign Tuah. [explain the name] Built by Aaron James,  
-    Wesley Pilamunga, Hamim Seam and Tanzina Sumona. Mentored by Baljinder Hothi. 
+    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Sign Tuah. [explain the name] Built by Aaron James, Wesley Pilamunga, Hamim Seam and Tanzina Sumona. Mentored by Baljinder Hothi. 
     
     During the fall semester,  we used machine learning to train a YOLO model with 50 ASL words using image classification.
 
