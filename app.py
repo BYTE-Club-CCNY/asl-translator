@@ -3,6 +3,8 @@ import cv2
 import os
 import cam_tools as ct # cam tools
 
+from ultralytics import YOLO
+
 import base64 #display pdf
 
 
@@ -17,6 +19,8 @@ def show_pdf(file_path):
     st.markdown(pdf_display, unsafe_allow_html=True)
 
 if __name__ == "__main__":
+    model = YOLO(os.getcwd() + "/Model/best.pt", "classify")
+
     st.title("""
 # BYTE ASL TRANSLATOR
 """)
@@ -61,8 +65,9 @@ if __name__ == "__main__":
         cap.release()
 
     with mp_hands.Hands() as hands:
+        
         while running:
-            frame_placeholder.image(ct.DrawImage(hands, cap), channels="BGR")
+            frame_placeholder.image(ct.DrawImage(hands, cap, model), channels="BGR")
             
 #adding pdf with the list of words used to train the model
     st.subheader("📄 View Documentation")
