@@ -23,7 +23,8 @@ def DrawImage(hands, cap,model, show=False ): # This is mostly a copy of the old
             frame.flags.writeable = True
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
            
-            results = model.track(frame, stream=True)
+            # results = model.predict(frame, conf=0.25)
+            results = model.track(frame, stream=True, conf=0.25)
             
             for r in results:
                 boxes = r.boxes
