@@ -1,2 +1,6 @@
 opencv-python
 mediapipe
+streamlit
+ultralytics
+tensorflow
+cvzone
