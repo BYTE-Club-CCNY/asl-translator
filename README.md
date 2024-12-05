@@ -43,12 +43,13 @@ By combining **MediaPipe** and **YOLO**, this application provides accurate reco
   [LinkedIn Profile](https://www.linkedin.com/in/wesley-pilamunga-911785295/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app)
 
 - **Hamim Sean**  
-  *LinkedIn Profile: To be added*
+  [LinkedIn Profile](https://www.linkedin.com/in/hamim-seam-07276128a/)
 
 - **Tanzania Sumona**  
-  *LinkedIn Profile: To be added*
+  [LinkedIn Profile](https://www.linkedin.com/in/tanzina-sumona-7aa932225/)
 
 - **Mentor/Overseer: Baljinder Hothi**
+  [LinkedIn Profile](https://www.linkedin.com/in/baljinder-hothi/)
 
 ---
 
@@ -78,15 +79,12 @@ By combining **MediaPipe** and **YOLO**, this application provides accurate reco
    ```
 4. Follow the on-screen instructions to start the model, use the gestures, and view the documentation.
 
-### Adding LinkedIn Profiles
-To update the LinkedIn profiles for **Hamim Sean** or **Tanzania Sumona**, edit the appropriate sections in the README or application source code.
-
 ---
 
 ## **Future Improvements**
 - Add more ASL gestures to the dataset.
-- Integrate Hamim Sean and Tanzania Sumona's LinkedIn profiles.
 - Optimize model performance for real-time applications.
+- Improve the deployment on Streamlit or on a Linux Based Server(BYTE Team 1)
 
 ---
 
