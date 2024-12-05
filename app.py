@@ -4,6 +4,7 @@ import os
 import cam_tools as ct # cam tools
 
 from ultralytics import YOLO
+from PIL import Image
 
 import base64 #display pdf
 
@@ -42,7 +43,6 @@ BYTE ASL TRANSLATOR
     """)
 
     
-    frame_placeholder = st.empty()
     
     st.write(""" To begin using the model, press the "Run Model" button to activate your webcam, and use any of the ASL words that 
              were used to train the model. Using a word outside of the dataset will most likely result in the model not understanding 
@@ -50,7 +50,6 @@ BYTE ASL TRANSLATOR
              """)
     start = st.button("Run Model")
     stop = st.button("Stop")
-    
     
     running: bool = None
     cap = cv2.VideoCapture()
@@ -63,16 +62,27 @@ BYTE ASL TRANSLATOR
         running = False
         cap.release()
 
+    frame_placeholder = st.empty()
     with mp_hands.Hands() as hands:
-        
         while running:
             frame_placeholder.image(ct.DrawImage(hands, cap, model), channels="BGR")
             
-#adding pdf with the list of words used to train the model
+    # adding pdf with the list of words used to train the model
     st.subheader("📄 View Documentation")
-    pdf_file_path = os.getcwd() + "/ASL_dataset.pdf"  # Replace with your PDF file path
+    pdf_file_path = os.getcwd() + "/ASL_dataset.pdf"
     show_pdf(pdf_file_path)
     
+    st.write("""
+    Alternatively, upload an image to translate hand signs:
+    """)
+    input_image = st.file_uploader("Upload an image", type=["jpg", "png"])
+    
+    input_image_display = st.empty()
+    if input_image:
+        input_image = Image.open(input_image)
+        results = model.predict(input_image)
 
+        annotated_image = results[0].plot()
+        annotated_image = cv2.cvtColor(annotated_image, cv2.COLOR_BGR2RGB)
 
-
+        input_image_display.image(annotated_image)

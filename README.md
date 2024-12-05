@@ -45,7 +45,7 @@ By combining **MediaPipe** and **YOLO**, this application provides accurate reco
 - **Hamim Sean**  
   [LinkedIn Profile](https://www.linkedin.com/in/hamim-seam-07276128a/)
 
-- **Tanzania Sumona**  
+- **Tanzina Sumona**  
   [LinkedIn Profile](https://www.linkedin.com/in/tanzina-sumona-7aa932225/)
 
 - **Mentor/Overseer: Baljinder Hothi**
