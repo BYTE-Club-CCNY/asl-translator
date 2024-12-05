@@ -37,7 +37,7 @@ def DrawImage(hands, cap,model, show=False ): # This is mostly a copy of the old
 
                     cls = box.cls[0]
                     name = r.names[int(cls)]
-                    print('name:', name)
+                    # print('name:', name)
 
                     cvzone.putTextRect(frame, f'{name} 'f'{conf}', (max(0,x1), max(35,y1)), scale = 0.5)
             results = hands.process(frame)

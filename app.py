@@ -26,7 +26,7 @@ if __name__ == "__main__":
 """)
     #intro to the streamlit
     st.write("""
-    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: [Add names here]. During the fall semester, 
+    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Aaron James, Wesley Pilamunga, Hamim Sean, Tazina Sumona and our mentor/overseer Baljinder Hothi. During the fall semester, 
     we used machine learning to train a YOLO model with 50 ASL words using image classification.
 
     **MediaPipe**:
