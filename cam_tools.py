@@ -55,7 +55,7 @@ def DrawImage(hands, cap,model, show=False ): # This is mostly a copy of the old
             return frame       
 
 if __name__ == "__main__":
-    model = YOLO(os.getcwd() + "/Model/best.pt", "detect")
+    model = YOLO(os.getcwd() + "/Model/best.pt", "classify")
     cap = cv2.VideoCapture(0)
 
     with mp_hands.Hands() as hands:
