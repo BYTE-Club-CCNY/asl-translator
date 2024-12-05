@@ -21,11 +21,11 @@ if __name__ == "__main__":
     model = YOLO(os.getcwd() + "/Model/best.pt", "classify")
 
     st.title("""
-# BYTE ASL TRANSLATOR
+BYTE ASL TRANSLATOR
 """)
     #intro to the streamlit
     st.write("""
-    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Aaron James, Wesley Pilamunga, Hamim Sean, Tanzina Sumona and our mentor/overseer Baljinder Hothi. During the fall semester, 
+    Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Aaron James, Wesley Pilamunga, Hamim Seam, Tanzina Sumona and our mentor/overseer Baljinder Hothi. During the fall semester, 
     we used machine learning to train a YOLO model with 50 ASL words using image classification. 
 
     **MediaPipe**:

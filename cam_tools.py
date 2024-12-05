@@ -23,7 +23,8 @@ def DrawImage(hands, cap,model, show=False ): # This is mostly a copy of the old
             frame.flags.writeable = True
             frame = cv2.cvtColor(frame, cv2.COLOR_RGB2BGR)
            
-            results = model.track(frame, stream=True)
+            # results = model.predict(frame, conf=0.25)
+            results = model.track(frame, stream=True, conf=0.25)
             
             for r in results:
                 boxes = r.boxes
@@ -54,7 +55,7 @@ def DrawImage(hands, cap,model, show=False ): # This is mostly a copy of the old
             return frame       
 
 if __name__ == "__main__":
-    model = YOLO(os.getcwd() + "/Model/best.pt", "classify")
+    model = YOLO(os.getcwd() + "/Model/best.pt", "detect")
     cap = cv2.VideoCapture(0)
 
     with mp_hands.Hands() as hands:
