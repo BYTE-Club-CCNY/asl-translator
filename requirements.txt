@@ -1,3 +1,4 @@
+torch==2.1.0+cpu
 opencv-python-headless
 mediapipe
 streamlit
