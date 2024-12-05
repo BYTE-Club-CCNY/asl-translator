@@ -1,7 +1,9 @@
 import streamlit as st
 import cv2
-
+import os
 import cam_tools as ct # cam tools
+
+from ultralytics import YOLO
 
 import base64 #display pdf
 
@@ -17,15 +19,19 @@ def show_pdf(file_path):
     st.markdown(pdf_display, unsafe_allow_html=True)
 
 if __name__ == "__main__":
+    model = YOLO(os.getcwd() + "/Model/best.pt", "classify")
+
     st.title("""
 # BYTE ASL TRANSLATOR
 """)
     #intro to the streamlit
     st.write("""
+
     Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Sign Tuah. Our team is about breaking the barrier between ASL and speech, making communication easier for everyone. We want to help people sign to each other without worrying about being misunderstood.
     Built by Aaron James, Wesley Pilamunga, Hamim Seam and Tanzina Sumona. Mentored by Baljinder Hothi. 
     
     During the fall semester,  we used machine learning to train a YOLO model with 50 ASL words using image classification.
+
 
     **MediaPipe**:
     MediaPipe is used to identify and extract regions of interest (ROIs), specifically for hand detection. 
@@ -63,12 +69,15 @@ if __name__ == "__main__":
         cap.release()
 
     with mp_hands.Hands() as hands:
+        
         while running:
-            frame_placeholder.image(ct.DrawImage(hands, cap), channels="BGR")
+            frame_placeholder.image(ct.DrawImage(hands, cap, model), channels="BGR")
             
 #adding pdf with the list of words used to train the model
     st.subheader("📄 View Documentation")
-    pdf_file_path = "/Users/tanzinasumona/Desktop/asl-translator/ASL_dataset.pdf" 
+
+    pdf_file_path = os.getcwd() + "/ASL_dataset.pdf"  # Replace with your PDF file path
+
     show_pdf(pdf_file_path)
     
 
