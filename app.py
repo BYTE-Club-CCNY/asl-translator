@@ -11,7 +11,6 @@ import base64 #display pdf
 import mediapipe as mp
 mp_hands = mp.solutions.hands
 
-
 def show_pdf(file_path):
     with open(file_path, "rb") as f:
         base64_pdf = base64.b64encode(f.read()).decode("utf-8")
@@ -27,7 +26,7 @@ if __name__ == "__main__":
     #intro to the streamlit
     st.write("""
     Welcome to the BYTE ASL Translator! We are BYTE's Team 4: Aaron James, Wesley Pilamunga, Hamim Sean, Tanzina Sumona and our mentor/overseer Baljinder Hothi. During the fall semester, 
-    we used machine learning to train a YOLO model with 50 ASL words using image classification.
+    we used machine learning to train a YOLO model with 50 ASL words using image classification. 
 
     **MediaPipe**:
     MediaPipe is used to identify and extract regions of interest (ROIs), specifically for hand detection. 

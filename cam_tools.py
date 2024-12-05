@@ -39,7 +39,7 @@ def DrawImage(hands, cap,model, show=False ): # This is mostly a copy of the old
                     name = r.names[int(cls)]
                     # print('name:', name)
 
-                    cvzone.putTextRect(frame, f'{name} 'f'{conf}', (max(0,x1), max(35,y1)), scale = 0.5)
+                    cvzone.putTextRect(frame, f'{name} 'f'{conf}', (max(0,x1), max(35,y1)))
             results = hands.process(frame)
             if results.multi_hand_landmarks:
                 for hand_landmarks in results.multi_hand_landmarks:
